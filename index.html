@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InsightAI - Study Helper Tool</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightAI - Study and Homework Assistance</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-<h1>InsightAI - Study Helper Tool</h1>
-<div class="box">
-<label for="difficulty">Select Difficulty:</label>
-<select id="difficulty">
-<option value="easy">Easy</option>
-<option value="medium">Medium</option>
-<option value="hard">Hard</option>
-</select>
-</div>
-<div class="box">
-<label for="question">Enter your question:</label>
-<input type="text" id="question" placeholder="Type your question here...">
-</div>
-<div class="box">
-<label for="useDatabase">Use Database for assistance:</label>
-<label class="slider">
-<input type="checkbox" id="useDatabase">
-<span class="slider-btn"></span>
-</label>
-</div>
-<div class="button-container">
-<button class="button">Access Study Materials</button>
-<button class="button">Get Answer</button>
-<button class="button">Explore Similar Questions</button>
-</div>
-</div>
+    <header>
+        <h1>Welcome to InsightAI</h1>
+        <p>Study and Homework Assistance Web Application</p>
+    </header>
+
+    <section class="action-buttons">
+        <button onclick="window.open('/InsightAI', '_blank')">Launch InsightAI</button>
+        <button onclick="window.open('https://www.insightlistener.com', '_blank')">Launch Insight Listener</button>
+    </section>
+
+    <main>
+        <section class="features">
+            <abot>About the App</abot>
+            <p>Our application, InsightAI, aims to revolutionize the way you study and complete homework. Powered by cutting-edge AI technologies, it offers a range of features to assist you in your academic journey.</p>
+            <h3>Core Features:</h3>
+            <ul>
+                <li>AI-based Study Schedule Generation</li>
+                <li>Homework Assistance</li>
+                <li>Progress Tracking and Analytics</li>
+                <li>Integration with Learning Resources</li>
+            </ul>
+            <p>Why Use Our App?</p>
+            <ul>
+                <li>Efficiency</li>
+                <li>Accuracy</li>
+                <li>Insights</li>
+                <li>Integration</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Thank you for considering our Study and Homework Assistance!</p>
+    </footer>
+
 </body>
 </html>
