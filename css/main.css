@@ -3,11 +3,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: #353535; /* Light gray background */
 }
 
 header {
-    background-color: #76ff61; /* Green color */
+    background-color: #ad7eff; /* Green color */
     color: #1b1b1b;
     text-align: center;
     padding: 20px;
@@ -19,13 +19,14 @@ main {
 }
 
 .features {
-    background-color: #fff; /* White background */
+    background-color: #000000; /* White background */
     padding: 20px;
     margin-bottom: 20px;
-    color: #333; /* Dark gray text color */
+    color: #ffffff; /* Dark gray text color */
     border-radius: 15px; /* Slightly round the corners */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    
     
 }
 
@@ -33,10 +34,10 @@ main {
     transform:
       perspective(750px)
       translate3d(0px, 0px, -250px)
-      rotateX(27deg)
+      rotateX(5deg)
       scale(0.9, 0.9);
     border-radius: 20px;
-    border: 5px solid #e6e6e6;
+    border: 5px solid #76ff61;
     box-shadow: 0 70px 40px -20px rgba(0, 0, 0, 0.2);
     transition: 0.4s ease-in-out transform;
   
@@ -82,7 +83,7 @@ button:hover {
 }
 
 footer {
-    background-color: #76ff61; /* Green color */
+    background-color: #ad7eff; /* Green color */
     color: #1b1b1b;
     text-align: center;
     padding: 10px;
