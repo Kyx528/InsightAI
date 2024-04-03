@@ -1,114 +1,140 @@
 body {
-    background-color: #0e0e0e;
-    color: #333;
-    font-family: Arial, sans-serif;
+    background-color: #F8F7F5; /* Light gray background */
+    font-family: Arial, sans-serif; /* Set a common font */
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    }
-    .container {
+}
+
+header {
+    background-color: #6286EA; /* Dark gray background for header */
+    padding: 20px;
+    text-align: center;
+    color: #fff; /* White text color */
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
     width: 800px;
     padding: 40px;
-    background-color: #111;
+    background-color: #fff; /* White background */
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9); /* Add shadow */
     border: 1px solid #222;
     display: flex;
     flex-direction: column;
     align-items: center;
-    }
-    h1 {
+    margin: auto; /* Center horizontally */
+    margin-top: 40px; /* Increase space from the top */
+    margin-bottom: 40px; /* Increase space from the bottom */
+}
+
+h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #ad7eff;
-    }
-    .box {
+    color: #43436B; /* Text color */
+}
+
+.box {
     width: 100%;
     padding: 20px;
-    background-color: #222;
+    background-color: #fff; /* White background */
     border-radius: 10px;
     margin-bottom: 20px;
-    border: 1px solid #333;
-    }
-    label {
+    border: 1px solid #222;
+}
+
+label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #ad7eff;
-    }
-    input[type="text"], select {
+    color: #43436B; /* Text color */
+}
+
+input[type="text"],
+select {
     width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #444;
     border-radius: 5px;
-    background-color: #222;
-    color: #ccc;
-    }
-    input[type="text"]::placeholder {
+    background-color: #F8F7F5; /* Light gray background */
+    color: #43436B; /* Text color */
+}
+
+input[type="text"]::placeholder {
     color: #666;
-    }
-    .button-container {
+}
+
+.button-container {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    }
-    .button {
+}
+
+.button {
     flex: 1;
     margin: 0 10px;
     padding: 15px;
-    background-color: #ff385c;
-    color: white;
+    background-color: #6286EA; /* Green color */
+    color: #fff; /* White text color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    }
-    .button:hover {
-    background-color: #ff5a81;
+}
+
+.button:hover {
+    background-color: #71A5E0; /* Lighter green color */
     transform: translateY(-2px);
-    }
-    .button:active {
+}
+
+.button:active {
     transform: translateY(2px);
-    }
-    .slider {
+}
+
+.slider {
     display: inline-block;
     position: relative;
     width: 60px;
     height: 34px;
     margin-bottom: 20px;
-    }
-    .slider input {
+}
+
+.slider input {
     display: none;
-    }
-    .slider .slider-btn {
+}
+
+.slider .slider-btn {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ad7eff;
+    background-color: #6286EA; /* Green color */
     transition: 0.4s;
     border-radius: 34px;
-    }
-    .slider .slider-btn:before {
+}
+
+.slider .slider-btn:before {
     position: absolute;
     content: "";
     height: 26px;
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: #ff5a81;
+    background-color: #fff; /* White color */
     transition: 0.4s;
     border-radius: 50%;
-    }
-    input:checked + .slider-btn {
+}
+
+input:checked + .slider-btn {
     background-color: #6a0dad;
-    }
-    input:checked + .slider-btn:before {
+}
+
+input:checked + .slider-btn:before {
     transform: translateX(26px);
-    }
+}
