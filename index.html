@@ -4,41 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InsightAI - Study and Homework Assistance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-GN5Tb7gciv4lnNGFcsb4CB4tJmAWzoZ6PbRfo4Kuv2L+mkz4+5v05tFveYlvm+jj" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <style>
         body {
-            font-family: Arial, sans-serif; /* Set a common font */
-            line-height: 1.6; /* Increase line height for better readability */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #F8F7F5; /* Light gray background */
+            background-color: #F8F7F5;
         }
         header {
-            background-color: #45a049; /* Dark gray background for header */
+            background-color: #45a049;
             padding: 20px;
             text-align: center;
-            color: #fff; /* White text color */
+            color: #fff;
         }
         main {
             padding: 20px;
         }
         .features {
-            /*filter: blur(5px); /* Initial blur */
-            transition: filter 0.5s ease, transform 0.5s ease; /* Smooth transition for the blur effect and transform */
-            padding: 20px; /* Add padding for spacing */
-            background-color: #fff; /* White background for the section */
-            border-radius: 10px; /* Add rounded corners */
-            box-shadow: 1 1 1px rgba(0, 0, 0, 0); /* Add a subtle shadow */
-            margin-bottom: 20px; /* Add margin at the bottom */
-            font-size: 16px; /* Adjust font size */
-            color: #43436B; /* Text color */
+            transition: filter 0.5s ease, transform 0.5s ease;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow */
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #43436B;
+            margin-top: 30px;
         }
         .features:hover {
-            filter: none; /* Remove blur on hover */
-            /*transform: translate(0, 30px); /* Move the box slightly up on hover */
+            filter: none;
         }
         .features p {
-            margin-bottom: 15px; /* Add margin between paragraphs */
+            margin-bottom: 15px;
+        }
+        .record-button {
+            background-color: #009163; /* Green color */
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            margin: 10px auto; /* Center horizontally */
+            transition: background-color 0.3s, transform 0.2s ease-in-out; /* Adjust transition duration and timing function */
+            border-radius: 50%; /* Make it round */
+            width: 100px; /* Set width */
+            height: 100px; /* Set height */
+            font-size: 24px; /* Adjust font size */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            box-shadow: 1 2px 4px rgba(1, 1, 1, 1); /* Add shadow */
+        }
+        .record-button:hover {
+            background-color: #008470; /* Lighter green color */
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -48,16 +68,14 @@
         <p>Revolutionizing your learning journey</p>
     </header>
 
-    <section class="action-buttons">
-        <button onclick="window.open('/InsightAI', '_blank')">Launch InsightAI</button>
-        <button onclick="window.open('/InsightListener', '_blank')">Launch Insight Listener</button>
-        <button onclick="window.open('#', '_blank')">Visit Database</button> <!-- New Action Button -->
-    </section>
-
     <main>
         <section class="features" id="">
-            Introducing InsightAI, a groundbreaking platform driven by cutting-edge AI technology, poised to transform your studying experience and streamline homework completion. Leveraging state-of-the-art artificial intelligence algorithms, InsightAI crafts personalized study schedules tailored precisely to your learning pace and objectives. With InsightAI, gain access to invaluable homework assistance, featuring step-by-step solutions and comprehensive explanations. Bid farewell to endless hours of struggling with assignments and usher in a new era of efficient, stress-free learning. Furthermore, InsightAI boasts an extensive database encompassing a wide array of subjects, from algebra to history. This repository ensures rapid access to vast amounts of information, catering to your  specific queries and needs.What's more, InsightAI offers a unique recording feature, enabling you to capture and transcribe your professor's lectures effortlessly. Upon completion, the AI generates a personalized study guide tailored to the lecture's content, empowering you to maximize learning outcomes with ease.
+            Introducing InsightAI Listener: effortlessly record and transcribe your class lectures with a single click. Simply press record and let InsightAI Listener capture every detail of your lecture in real-time. Once you've finished, it automatically summarizes the lecture and creates a personalized study guide tailored to your needs. Revolutionize your learning experience with InsightAI Listener – making studying smarter, not harder.
         </section>
+        
+        <button class="record-button">
+            <i class="fas fa-microphone"></i>
+        </button>
     </main>
 </body>
 </html>
