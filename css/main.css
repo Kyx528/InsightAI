@@ -38,8 +38,8 @@ main {
 
 button {
     padding: 10px 20px;
-    background-color: #6286EA; /* Green color */
-    color: #1b1b1b;
+    background-color: #009163; /* Green color */
+    color: #ffffff;
     border: none;
     cursor: pointer;
     margin: 10px; /* Adjust margin */
@@ -49,7 +49,7 @@ button {
 }
 
 button:hover {
-    background-color: #71A5E0; /* Lighter green color */
+    background-color: #008470; /* Lighter green color */
     transform: scale(1.1);
 }
 
@@ -58,6 +58,6 @@ button.empty-button {
     width: 150px; /* Set width */
     height: 40px; /* Set height */
     background-color: transparent; /* Transparent background */
-    border: 1px solid #76ff61; /* Green border */
+    border: 1px solid #009163; /* Green border */
     margin: 10px; /* Adjust margin */
 }

@@ -61,13 +61,13 @@
         .button-container {
             width: 100%;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            margin-top: 20px; /* Adjust the margin-top here */
         }
         .button {
-            flex: 1;
             margin: 0 10px;
             padding: 15px;
-            background-color: #4caf50;
+            background-color: #009163;
             color: white;
             border: none;
             border-radius: 5px;
@@ -75,7 +75,7 @@
             transition: background-color 0.3s, transform 0.2s;
         }
         .button:hover {
-            background-color: #45a049;
+            background-color: #008470;
             transform: translateY(-2px);
         }
         .button:active {
@@ -95,13 +95,11 @@
             </select>
         </div>
         <div class="box">
-            <label for="question">Enter your question:</label>
+            <label for="question">Enter your question</label>
             <input type="text" id="question" placeholder="Type your question here...">
         </div>
         <div class="button-container">
             <button class="button">Get Answer</button>
-            <button class="button">Find Similar Problems</button>
-            <button class="button">Learn from Books</button>
         </div>
     </div>
 </body>

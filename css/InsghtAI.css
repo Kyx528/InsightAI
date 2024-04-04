@@ -1,140 +1,75 @@
 body {
-    background-color: #F8F7F5; /* Light gray background */
-    font-family: Arial, sans-serif; /* Set a common font */
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-
-header {
-    background-color: #6286EA; /* Dark gray background for header */
-    padding: 20px;
-    text-align: center;
-    color: #fff; /* White text color */
-}
-
-main {
-    padding: 20px;
-}
-
 .container {
     width: 800px;
     padding: 40px;
-    background-color: #fff; /* White background */
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9); /* Add shadow */
-    border: 1px solid #222;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto; /* Center horizontally */
-    margin-top: 40px; /* Increase space from the top */
-    margin-bottom: 40px; /* Increase space from the bottom */
 }
-
 h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #43436B; /* Text color */
+    color: #333;
 }
-
 .box {
     width: 100%;
     padding: 20px;
-    background-color: #fff; /* White background */
+    background-color: #f9f9f9;
     border-radius: 10px;
     margin-bottom: 20px;
-    border: 1px solid #222;
+    border: 1px solid #ddd;
 }
-
 label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #43436B; /* Text color */
+    color: #555;
 }
-
-input[type="text"],
-select {
+input[type="text"], select {
     width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #444;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #F8F7F5; /* Light gray background */
-    color: #43436B; /* Text color */
+    background-color: #f5f5f5;
+    color: #333;
 }
-
 input[type="text"]::placeholder {
-    color: #666;
+    color: #999;
 }
-
 .button-container {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Center the button */
 }
-
 .button {
-    flex: 1;
     margin: 0 10px;
     padding: 15px;
-    background-color: #6286EA; /* Green color */
-    color: #fff; /* White text color */
+    background-color: #4caf50;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
-
 .button:hover {
-    background-color: #71A5E0; /* Lighter green color */
+    background-color: #45a049;
     transform: translateY(-2px);
 }
-
 .button:active {
     transform: translateY(2px);
-}
-
-.slider {
-    display: inline-block;
-    position: relative;
-    width: 60px;
-    height: 34px;
-    margin-bottom: 20px;
-}
-
-.slider input {
-    display: none;
-}
-
-.slider .slider-btn {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #6286EA; /* Green color */
-    transition: 0.4s;
-    border-radius: 34px;
-}
-
-.slider .slider-btn:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: #fff; /* White color */
-    transition: 0.4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider-btn {
-    background-color: #6a0dad;
-}
-
-input:checked + .slider-btn:before {
-    transform: translateX(26px);
 }
