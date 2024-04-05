@@ -28,8 +28,8 @@
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow */
-            margin-bottom: 20px;
+            box-shadow: 1 1px 1px rgba(1, 1, 1, 1); /* Add shadow */
+            margin-bottom: 58px;
             font-size: 16px;
             color: #43436B;
             margin-top: 30px;
@@ -41,24 +41,35 @@
             margin-bottom: 15px;
         }
         .record-button {
-            background-color: #009163; /* Green color */
+            background-color: #008470; /* Red color */
             color: #ffffff;
             border: none;
             cursor: pointer;
             margin: 10px auto; /* Center horizontally */
             transition: background-color 0.3s, transform 0.2s ease-in-out; /* Adjust transition duration and timing function */
-            border-radius: 50%; /* Make it round */
-            width: 100px; /* Set width */
-            height: 100px; /* Set height */
-            font-size: 24px; /* Adjust font size */
+            border-radius: 10%; /* Make it round */
+            padding: 15px 30px; /* Adjust padding */
+            font-size: 16px; /* Adjust font size */
             display: flex; /* Use flexbox for centering */
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
             box-shadow: 1 2px 4px rgba(1, 1, 1, 1); /* Add shadow */
+            text-decoration: none; /* Remove underline */
+            font-family: Arial, sans-serif; /* Match font */
         }
         .record-button:hover {
-            background-color: #008470; /* Lighter green color */
+            background-color: #007576; /* Lighter red color on hover */
             transform: scale(1.1);
+        }
+        .mic-icon {
+            width: 60%;
+            height: 60%;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background-color: #000;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -73,9 +84,94 @@
             Introducing InsightAI Listener: effortlessly record and transcribe your class lectures with a single click. Simply press record and let InsightAI Listener capture every detail of your lecture in real-time. Once you've finished, it automatically summarizes the lecture and creates a personalized study guide tailored to your needs. Revolutionize your learning experience with InsightAI Listener – making studying smarter, not harder.
         </section>
         
-        <button class="record-button">
-            <i class="fas fa-microphone"></i>
+        <button class="record-button" id="recordButton">
+            Record
         </button>
+
+        <canvas id="audioCanvas" width="600" height="200"></canvas>
     </main>
+
+    <script>
+        window.onload = function() {
+            const recordButton = document.getElementById('recordButton');
+            let isRecording = false;
+            let audioCtx;
+            let analyser;
+            let canvas;
+            let canvasCtx;
+            let bufferLength;
+            let dataArray;
+
+            recordButton.addEventListener('click', () => {
+                if (!isRecording) {
+                    startRecording();
+                    isRecording = true;
+                    recordButton.textContent = 'Stop Recording';
+                } else {
+                    stopRecording();
+                    isRecording = false;
+                    recordButton.textContent = 'Record';
+                }
+            });
+
+            function startRecording() {
+                // Create Web Audio API context
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Create analyser node
+                analyser = audioCtx.createAnalyser();
+                analyser.fftSize = 256;
+                bufferLength = analyser.frequencyBinCount;
+                dataArray = new Uint8Array(bufferLength);
+
+                // Get canvas element
+                canvas = document.getElementById('audioCanvas');
+                canvasCtx = canvas.getContext('2d');
+
+                // Connect audio source to analyser
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                    .then(function(stream) {
+                        const source = audioCtx.createMediaStreamSource(stream);
+                        source.connect(analyser);
+                        draw();
+                    })
+                    .catch(function(err) {
+                        console.error('Error: ' + err);
+                    });
+            }
+
+            function stopRecording() {
+                // Stop media stream
+                audioCtx.close();
+            }
+
+            function draw() {
+                const WIDTH = canvas.width;
+                const HEIGHT = canvas.height;
+
+                canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
+
+                function drawVisualizer() {
+                    requestAnimationFrame(drawVisualizer);
+
+                    analyser.getByteFrequencyData(dataArray);
+
+                    canvasCtx.fillStyle = '#fff';
+                    const barWidth = (WIDTH / bufferLength) * 2.5;
+                    let x = 0;
+
+                    for(let i = 0; i < bufferLength; i++) {
+                        const barHeight = dataArray[i] * 2;
+
+                        canvasCtx.fillRect(x, HEIGHT - barHeight / 2, barWidth, barHeight);
+
+                        x += barWidth + 1;
+                    }
+                };
+
+                drawVisualizer();
+            }
+        };
+    </script>
 </body>
 </html>
